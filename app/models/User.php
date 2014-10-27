@@ -67,12 +67,12 @@
 
     public function getfinance()
     {
-        return this->finance;
+        return $this->finance;
     }
 
     public function setfinance($finance)
     {
-        $this->finance=finance;
+        $this->finance = $finance;
     }
 
     public function newUser(){
