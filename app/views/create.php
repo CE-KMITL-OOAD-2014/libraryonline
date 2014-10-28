@@ -28,7 +28,7 @@
     
             <!-- book name -->
             <div class="form-group">
-              <label class="col-md-1 control-label" for="name"><font color = "#1E90FF">Name</font></label>
+              <label class="col-md-1 control-label" for="name" required><font color = "#1E90FF">Name</font></label>
               <div class="col-md-11">
                 <input id="name" name="bookName" type="text" placeholder="name of a book" class="form-control">
               </div>
@@ -55,7 +55,7 @@
 		
             <!-- book detail -->
             <div class="form-group">
-              <label class="col-md-1 control-label" for="message"><font color = "#1E90FF">Detail</font></label>
+              <label class="col-md-1 control-label" for="message" required><font color = "#1E90FF">Detail</font></label>
               <div class="col-md-11">
                 <textarea class="form-control" id="message" name="bookDetail" placeholder="short story of the book" rows="3"></textarea>
               </div>
@@ -63,7 +63,7 @@
     
             <!-- book context -->
             <div class="form-group">
-              <label class="col-md-1 control-label" for="message"><font color = "#1E90FF">Context</font></label>
+              <label class="col-md-1 control-label" for="message" required><font color = "#1E90FF">Context</font></label>
               <div class="col-md-11">
                 <textarea class="form-control" id="message" name="bookContext" placeholder="enter book story here..." rows="15"></textarea>
               </div>
@@ -71,17 +71,17 @@
 			
 			 <!-- book context -->
             <div class="form-group">
-              <label class="col-md-1 control-label" for="message"><font color = "#1E90FF">Status</font></label>
+              <label class="col-md-1 control-label" for="message" required><font color = "#1E90FF">Status</font></label>
               <div class="col-md-11">
                 <div class="radio">
 					<label>
-						<input type="radio" name="isPublic" id="optionsRadios1" value="option1" checked>
+						<input type="radio" name="isPublic" id="optionsRadios1" value="1" checked>
 							Public - Your book can access by any member.
 					</label>
 				</div>
 				<div class="radio">
 					<label>
-						<input type="radio" name="isPublic" id="optionsRadios2" value="option2">
+						<input type="radio" name="isPublic" id="optionsRadios2" value="0">
 							Private - Only member purchase the book.
 					</label>
 				</div>

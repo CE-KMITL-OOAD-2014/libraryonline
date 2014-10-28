@@ -31,24 +31,24 @@
 			<hr class="colorgraph">
 			
 			<div class="form-group">
-				<input type="text" name="userName" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
+				<input type="text" name="userName" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3" required>
 			</div>
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-12">
 					<div class="form-group">
-						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5" required>
 					</div>
 				</div>	
 			</div>
 			<div class="form-group">
-				<input type="text" name="finance" id="finance" class="form-control input-lg" placeholder="Financial Details" tabindex="6">
+				<input type="text" name="finance" id="finance" class="form-control input-lg" placeholder="Financial Details" tabindex="6" required>
 			</div>
 			<div class="row">
 				
 				
 					<div class="checkbox">
-						<label><input type="checkbox" value="">I Agree</label>  in <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a>
-					</div>
+						<label><input type="checkbox" value="">I Agree</label>  in <a href="#" data-toggle="modal" data-target="#t_and_c_m" required autofocus>Terms and Conditions</a>
+					</div> 
 				
 			</div>
 			

@@ -19,7 +19,7 @@
   </head>
   <body>
 	
-	<marquee><h3>Example page header <small>Subtext for header</small></h3></marquee>
+	<marquee><h3>Online <small>Library</small></h3></marquee>
 		<img src="booktop.jpg" class="img-responsive" alt="Responsive image">
 	
 	<div class="jumbotron" style = "background-color: #FFF">

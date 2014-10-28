@@ -2,7 +2,7 @@
 
 	class User {
 
-		private $userID;
+		private $id;
 		private $userName;
 		private $password;
 		private $keyBook;
@@ -13,9 +13,14 @@
 
     public function getId()
     {
-        return $this->userID;
+        return $this->id;
     }
 
+    public function setID($id)
+    {
+        $this->id = $id;
+        
+    }
    
     public function getName()
     {
@@ -83,17 +88,18 @@
     	$new->save();
     }
 
-    public static function getById($userID){
-    	$data=userEloquent::find($userID);
+    public static function getById($id){
+        $obj=new User;
+    	$data=userEloquent::find($id);
     	if($data==NULL){
+            echo "not found";
     		return NULL;
     	}
-
-    	$obj=new User;
-    	$obj->userID=$data->userID;
+        echo "found";
+    	$obj->id=$data->id;
     	$obj->userName=$data->userName;
     	$obj->password=$data->password;
-    	$obj->email=$data->email;
+    	//$obj->email=$data->email;
         $obj->finance=$data->finance;
 
     	return $obj;
@@ -101,12 +107,14 @@
     }
 
     public function editUser(){
+        $edit=new User;
     	$edit=userEloquent::find($this->id);
     	$edit->userName=$this->userName;
     	$edit->password=$this->password;
     	$edit->finance=$this->finance;
     	$edit->save();
     }
+
 
 }
 

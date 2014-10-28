@@ -34,6 +34,17 @@ class UserController extends BaseController{
 		}
 		return Redirect::to('/firstpage');
 	}
+
+
+	public function test(){
+		$book=User::getById(1);
+		var_dump($book->getName());
+		return '----- pp';
+	}
+
+
+
+
 }
 
 ?>

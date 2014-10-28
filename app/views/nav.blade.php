@@ -39,7 +39,7 @@
                         <img src="tree.jpg" alt="First slide">
                         <div class="carousel-caption">
                             <h3>
-                                First slide</h3>
+                                </h3>
                             <p>หนังสือน่าอ่าน</p>
                         </div>
                     </div>
@@ -213,10 +213,12 @@
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Namsom Juice &nbsp <span class= "glyphicon glyphicon-user pull-right"></span></a>
 			<ul class="dropdown-menu">
-				<li><a href="setting">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+				<li><a href="setting">Account Setting<span class="glyphicon glyphicon-cog pull-right"></span></a></li>
 				<li class="divider"></li>
-				<li><a href="create">Create Book &nbsp  &nbsp &nbsp <span class="glyphicon glyphicon-plus"></span></a></li>
+				<li><a href="create">Create Book  <span class="glyphicon glyphicon-plus pull-right"></span></a></li>
 				<li class="divider"></li>
+                <li><a href="manage">Manage Book <span class="glyphicon glyphicon-pencil pull-right"></span></a></li>
+                <li class="divider"></li>
 				<li><a href="#">Book Request &nbsp <span class="badge pull-right"> 2 </span></a></li>
 				<li class="divider"></li>
 				<li><a href="firstpage">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>

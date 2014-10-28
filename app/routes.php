@@ -16,26 +16,28 @@
 // 	return 'test';
 // }));
 
-Route::get('/', function(){
+// Route::get('/', function(){
 
-	// $test=new User;
-	// $test->setName('somdam');
-	// $test->setpassword('ghjkl;ddd');
-	// $test->setfinance('wertyuio');
-	// $test->newUser();
+// 	// $test=new User;
+// 	// $test->setName('somdam');
+// 	// $test->setpassword('ghjkl;ddd');
+// 	// $test->setfinance('wertyuio');
+// 	// $test->newUser();
 
-	// $test=new Book;
-	// $test->setName('abcd');
-	// $test->setWriterID(1);
-	// $test->setisPublic(true);
-	// $test->setbookDetail('dfvghjklkjhgfcdcfvghjkl,mnbvcdfghjmnbghjmnbhjkmnhjklkmjnbvcdfghj');
-	// $test->setbookContext('sdfghjkl;lkjhgfdsdfghjklkjhgfdfghjkl;lkjhgfghjklkjh');
-	// $test->setbookPrice(700);
-	// $test->setbookType(1);
-	// $test->newBook();
+// 	// $test=new Book;
+// 	// $test->setName('abcd');
+// 	// $test->setWriterID(1);
+// 	// $test->setisPublic(true);
+// 	// $test->setbookDetail('dfvghjklkjhgfcdcfvghjkl,mnbvcdfghjmnbghjmnbhjkmnhjklkmjnbvcdfghj');
+// 	// $test->setbookContext('sdfghjkl;lkjhgfdsdfghjklkjhgfdfghjkl;lkjhgfghjklkjh');
+// 	// $test->setbookPrice(700);
+// 	// $test->setbookType(1);
+// 	// $test->newBook();
 
-	return 'eiei' ;
-});
+// 	return 'eiei' ;
+// });
+
+Route::get('/', 'BookController@test' );
 
 Route::get('/home', function() {
 return View::make("home");
@@ -85,15 +87,21 @@ Route::get('/c10', function() {
 return View::make("c10");
 });
 
-Route::get('/create', function() {
-return View::make("create");
+Route::get('/manage', function() {
+return View::make("manage");
 });
+
+Route::get('/delete', 'BookController@deletee');
+
+Route::post('/edit', 'BookController@postedit');
+
+Route::get('/create', 'BookController@getcreate');
+Route::post('/create', 'BookController@postcreate');
 
 Route::get('/firstpage', 'UserController@firstpage');
 Route::post('/firstpage', 'UserController@signin');
 
 Route::get('/signup', 'UserController@getsignup');
-Route::post('/signup', 'UserController@postsignup');
 
 
 Route::get('/setting','UserController@setting');

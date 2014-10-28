@@ -84,13 +84,12 @@
                 <div class="panel-heading c-list">
                     <span class="title"><h4>Announce</h4></span>
                 </div>
-                &nbsp &nbsp &nbsp &nbsp Namsom</br>
-				dangerd</br>
-				fade</br>
-				fade</br>
-				fade</br>
-				fade</br>
-				fade</br>
+                </br>
+				</br>
+				</br>
+				</br>
+				</br>
+				
 				
                 
                 <ul class="list-group" id="contact-list">
@@ -103,12 +102,12 @@
                     <span class="title"><h4>About us</h4></span>
                 </div>
 				
-                &nbsp &nbsp &nbsp &nbsp Namsom</br>
-				danger'</br>
-				dangerd</br>
+                </br>
 				</br>
-				danger</br>
-				danger</br>
+				</br>
+				</br>
+				</br>
+				</br>
                 
                 <ul class="list-group" id="contact-list">
 				</ul>
