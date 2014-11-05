@@ -11,6 +11,7 @@
         private $bookPrice;
         private $bookType;
         private $bookRate;
+        private $numRate;
         private $avgbookRate;
 
 
@@ -114,6 +115,16 @@
         $this->bookRate = $bookRate;
     }
 
+    public function getnumRate()
+    {
+        return $this->numRate;
+    }
+
+    public function setnumRate($numRate)
+    {
+        $this->numRate = $numRate;
+    }
+
     public function getavgbookRate()
     {
         return $this->avgbookRate;
@@ -138,13 +149,14 @@
 
     public static function getById($id){
         $obj=new Book;
-    	$data=userEloquent::find($id);
+    	$data=bookEloquent::find($id);
     	if($data==NULL){
             echo "not found";
     		return NULL;
     	}
 
-        echo "found";
+        echo "foundd";
+        //var_dump($data);
     	$obj->id=$data->id;
     	$obj->bookName=$data->bookName;
     	$obj->writerID=$data->writerID;
@@ -153,6 +165,7 @@
         $obj->bookPrice=$data->bookPrice;
         $obj->bookType=$data->bookType;
         $obj->avgbookRate=$data->avgbookRate;
+        echo "foundp";
 
     	return $obj;
 
@@ -160,7 +173,7 @@
 
     public function editBook(){
         $edit=new Book;
-    	$edit=userEloquent::find($this->id);
+    	$edit=bookEloquent::find($this->id);
     	//$edit->bookName=$this->bookName;
     	//$edit->isPublic=$this->isPublic;
     	$edit->bookDetail=$this->bookDetail;
@@ -173,9 +186,12 @@
 
     public function addrate($bookRate){
         $add=new Book;
-        $add=userEloquent::find($this->id);
-        $add->bookRate=$bookRate+$this->bookRate;
+        $add=bookEloquent::find($this->id);
+        $add->bookRate+=$bookRate;
+        $add->numRate++;
         $add->save();
+
+        return $add->bookRate;
     }
 
 

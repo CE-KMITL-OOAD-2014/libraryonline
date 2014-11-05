@@ -10,12 +10,14 @@ class UserController extends BaseController{
 		$user->setPassword(Hash::make(Input::get('password')));
 		$user->setfinance(Input::get('finance'));
 		$user->newUser();
-		return Response::make('user have created');
+		echo "user has created";
+		return Redirect::to('/firstpage');
 	}
 
 	public function signout(){ //do end session
-
-		return Redirect::to('/firstpage');;
+		Session::flush();
+		echo "log out";
+		return Redirect::to('/firstpage');
 	}
 
 	public function setting(){
@@ -23,13 +25,14 @@ class UserController extends BaseController{
 	}
 
 	public function firstpage(){
+		var_dump(Session::get('User'));
 		return View::make("firstpage");
 	}
 
 	public function signin(){
 		$credentials=Input::only('userName','password');
 		if(Auth::attempt($credentials)){
-			Session::put( 'User', 'value');
+			Session::put( 'User',$credentials);
 			return Redirect::intended('/home');
 		}
 		return Redirect::to('/firstpage');

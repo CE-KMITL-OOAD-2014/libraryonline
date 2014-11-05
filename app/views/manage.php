@@ -74,10 +74,10 @@
 				</div>
 				<div class="modal-body">	
 					<div class="form-group">
-						<textarea rows="3" class="form-control" placeholder="Detail"></textarea>
+						<textarea rows="3" class="form-control" name="bookDetail" placeholder="Detail" required></textarea>
 					</div>
 					<div class="form-group">
-						<textarea rows="13" class="form-control" placeholder="Context"></textarea>
+						<textarea rows="13" class="form-control" name="bookContext" placeholder="Context" required></textarea>
 					</div>
 					<div class="form-group">
 						<div class="col-md-11">
@@ -96,7 +96,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<input class="form-control " type="text" placeholder="Price">
+						<input class="form-control" name="bookPrice" type="text" placeholder="Price">
 					</div>
 				</div>
 				<div class="modal-footer ">

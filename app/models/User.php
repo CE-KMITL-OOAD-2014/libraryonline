@@ -72,7 +72,7 @@
 
     public function getfinance()
     {
-        return $this->finance;
+        return $this->$finance;
     }
 
     public function setfinance($finance)

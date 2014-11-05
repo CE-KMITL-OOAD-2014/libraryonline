@@ -40,6 +40,8 @@
 Route::get('/', 'BookController@test' );
 
 Route::get('/home', function() {
+	echo "string";
+	var_dump(Session::get('User'));
 return View::make("home");
 });   
 
@@ -102,6 +104,9 @@ Route::get('/firstpage', 'UserController@firstpage');
 Route::post('/firstpage', 'UserController@signin');
 
 Route::get('/signup', 'UserController@getsignup');
+Route::post('/signup', 'UserController@postsignup');
+
+Route::get('/signout', 'UserController@signout');
 
 
 Route::get('/setting','UserController@setting');
