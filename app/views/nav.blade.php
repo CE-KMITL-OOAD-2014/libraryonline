@@ -118,7 +118,7 @@
           <ul class="dropdown-menu" role="menu">
             <li role="presentation" class="dropdown-header"></li>
             <li>
-                <a href="../../../c1">
+                <a href="../../../cata/0">
                     Generalities                                
                     <div class="thumbnail">
                         <img class="img-responsive" src="../../../1.jpg">
@@ -126,7 +126,7 @@
                 </a>
             </li>
             <li>
-                <a href="../../../c2">
+                <a href="../../../cata/1">
                    Philosophy                                
                     <div class="thumbnail">
                         <img class="img-responsive" src="../../../2.jpg">
@@ -134,7 +134,7 @@
                 </a>
             </li>
             <li>
-                <a href="../../../c3">
+                <a href="../../../cata/2">
                     Religion                             
                     <div class="thumbnail">
                         <img class="img-responsive" src="../../../3.jpg">
@@ -142,7 +142,7 @@
                 </a>
             </li>
             <li>
-                <a href="../../../c4">
+                <a href="../../../cata/3">
                    Social sciences                               
                     <div class="thumbnail">
                         <img class="img-responsive" src="../../../4.jpg">
@@ -150,7 +150,7 @@
                 </a>
             </li>
             <li>
-                <a href="../../../c5">
+                <a href="../../../cata/4">
                    Language                                
                     <div class="thumbnail">
                         <img class="img-responsive" src="../../../5.jpg">
@@ -158,7 +158,7 @@
                 </a>
             </li>
             <li>
-                <a href="../../../c6">
+                <a href="../../../cata/5">
                     Science                              
                     <div class="thumbnail">
                         <img class="img-responsive" src="../../../6.jpg">
@@ -166,7 +166,7 @@
                 </a>
             </li>
            <li>
-                <a href="../../../c7">
+                <a href="../../../cata/6">
                     Technology                               
                     <div class="thumbnail">
                         <img class="img-responsive" src="../../../7.jpg">
@@ -174,7 +174,7 @@
                 </a>
             </li>
             <li>
-                <a href="../../../c8">
+                <a href="../../../cata/7">
                    Arts and recreation                                
                     <div class="thumbnail">
                         <img class="img-responsive" src="../../../8.jpg">
@@ -182,7 +182,7 @@
                 </a>
             </li>
             <li>
-                <a href="../../../c9">
+                <a href="../../../cata/8">
                     Literature                              
                     <div class="thumbnail">
                         <img class="img-responsive" src="../../../9.jpg">
@@ -190,7 +190,7 @@
                 </a>
             </li>
             <li>
-                <a href="../../../c10">
+                <a href="../../../cata/9">
                    History and geography                               
                     <div class="thumbnail">
                         <img class="img-responsive" src="../../../10.jpg">

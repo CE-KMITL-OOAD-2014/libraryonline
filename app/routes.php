@@ -50,45 +50,47 @@ Route::get('/howto', function() {
 return View::make("howto");
 });   
 
-Route::get('/c1', function() {
-return View::make("c1");
-});   
+// Route::get('/c1', function() {
+// return View::make("c1");
+// });   
 
-Route::get('/c2', function() {
-return View::make("c2");
-});  
+// Route::get('/c2', function() {
+// return View::make("c2");
+// });  
 
-Route::get('/c3', function() {
-return View::make("c3");
-});  
+// Route::get('/c3', function() {
+// return View::make("c3");
+// });  
 
-Route::get('/c4', function() {
-return View::make("c4");
-});  
+// Route::get('/c4', function() {
+// return View::make("c4");
+// });  
 
-Route::get('/c5', function() {
-return View::make("c5");
-});  
+// Route::get('/c5', function() {
+// return View::make("c5");
+// });  
 
-Route::get('/c6', function() {
-return View::make("c6");
-});  
+// Route::get('/c6', function() {
+// return View::make("c6");
+// });  
 
-Route::get('/c7', function() {
-return View::make("c7");
-});  
+// Route::get('/c7', function() {
+// return View::make("c7");
+// });  
 
-Route::get('/c8', function() {
-return View::make("c8");
-});  
+// Route::get('/c8', function() {
+// return View::make("c8");
+// });  
 
-Route::get('/c9', function() {
-return View::make("c9");
-});  
+// Route::get('/c9', function() {
+// return View::make("c9");
+// });  
 
-Route::get('/c10', function() {
-return View::make("c10");
-});
+// Route::get('/c10', function() {
+// return View::make("c10");
+// });
+
+Route::get('/cata/{id}','searchController@searchtypebook' );  
 
 Route::get('/showbook/{id}','showController@bookcontext' );  
 
@@ -116,5 +118,5 @@ Route::get('/search', 'searchController@search');
 
 Route::get('/setting','UserController@setting');
 
-//Route::post('/', 'CommentController@postComments'); 
+Route::get('/', 'UserController@test'); 
 

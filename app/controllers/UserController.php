@@ -39,8 +39,9 @@ class UserController extends BaseController{
 
 
 	public function test(){
-		$book=User::getById(1);
-		var_dump($book->getName());
+		$book=new Comment;
+		$ans=$book->getbookrate(1);
+		var_dump($ans);
 		return '----- pp';
 	}
 

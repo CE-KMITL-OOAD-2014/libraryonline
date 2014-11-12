@@ -62,6 +62,16 @@ class Comment {
         return $comment;
     }
     
+        public function getbookrate($id)
+    {
+        $comment = commentEloquent::where('bookID', '=', $id)->get();
+        $allrate=0;
+        for($i=0;$i<count($comment);$i++){
+            $allrate+=$comment[$i]->rate;
+        }
+        $ans=$allrate/count($comment);
+        return $ans;
+    }
 
 
 }?>

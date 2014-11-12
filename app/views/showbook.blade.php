@@ -39,12 +39,14 @@
 	</div>
 	
 	<div class="container">
-	@if ($booklist<>NULL)
+	@if ($comment<>NULL)
 	@for ($i=0; $i <count($comment) ; $i++)
+	<!-- comment -->
 		<div class="well">
-				<font size="3" color= "#1E90FF" >Comment {{$i}} </font> &nbsp by <font color = "#1E90FF"> {{$comment[$i]->getuserID()}} </font> is rate <font color = "#1E90FF"> {{$comment[$i]->getrate()}} </font>
 
-					<p>&nbsp &nbsp &nbsp  {{$comment[$i]->getcomment()}}</p>
+				<font size="3" color= "#1E90FF" >Comment {{$i+1}} </font> &nbsp by <font color = "#1E90FF"> {{$comment[$i]->userID}} </font> rated <font color = "#1E90FF"> {{$comment[$i]->rate}} </font>
+
+					<p>&nbsp &nbsp &nbsp  {{$comment[$i]->Comment}}</p>
 		
 		</div>
 			@endfor

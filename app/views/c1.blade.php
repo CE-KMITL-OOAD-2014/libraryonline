@@ -7,8 +7,9 @@
 <!-- First and head-->
 <div class="row">
 <div class="col-md-2  col-md-offset-1" >
-	<h2><span class="label label-primary" >Literature</span></h2>
+	<h2><span class="label label-primary" >Philosophy</span></h2>
 </div>
+
 	<div class="col-md-6" style="margin-top:23px;">
 		<div class="panel panel-default ">
 			<div class="panel-heading">
@@ -26,10 +27,7 @@
                     </li>
 		</div>
 	</div>
-</div>
-
-
-<!--second story-->
+	<!--second story-->
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 		<div class="panel panel-default ">
@@ -49,6 +47,10 @@
 		</div>
 	</div>
 </div>
+</div>
+
+
+
  
  
  

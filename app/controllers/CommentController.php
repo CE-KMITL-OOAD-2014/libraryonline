@@ -14,7 +14,9 @@
 			$comments->setuserID(Auth::user()->id);
 			$comments->setbookID($id);
 			$comments->newComment();
-
+			$book =Book::getById($id);
+			$book->setavgbookRate($comments->getbookrate($id));
+			$book->editavgrate();
 			//var_dump(Input::get('rate'));
 			return Redirect::to('/showbook/'.$id);
 		}
