@@ -1,17 +1,21 @@
 <?php
 	class CommentController extends BaseController {
-		public function showComments()
+		public function showcomment($id)
 		{
-			$comments = Comment::all();
-			return View::make('comment')->with('comments',$comments);
+			$comment=new Comment;
+			$temp=$comment->getbookcomment($id);
+			return $temp;
 		}
 
-		public function postComments(){
-			$Comment = new Comment;
-			$Comment->user = Input::get('user');
-			$Comment->feeling = Input::get('feeling');
-			$Comment->comment = Input::get('comment');
-			$Comment->save();
-			return Redirect::to('/');
+		public function postcomment($id){
+			$comments = new Comment;
+			$comments->setComment(Input::get('Comment'));
+			$comments->setrate(Input::get('rate'));
+			$comments->setuserID(Auth::user()->id);
+			$comments->setbookID($id);
+			$comments->newComment();
+
+			//var_dump(Input::get('rate'));
+			return Redirect::to('/showbook/'.$id);
 		}
 	}

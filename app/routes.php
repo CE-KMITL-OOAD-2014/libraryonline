@@ -37,11 +37,12 @@
 // 	return 'eiei' ;
 // });
 
-Route::get('/', 'BookController@test' );
+
 
 Route::get('/home', function() {
-	echo "string";
-	var_dump(Session::get('User'));
+	//echo "string";
+	//var_dump(Session::get('User'));
+	//var_dump(Auth::user()->userName);
 return View::make("home");
 });   
 
@@ -89,13 +90,15 @@ Route::get('/c10', function() {
 return View::make("c10");
 });
 
-Route::get('/manage', function() {
-return View::make("manage");
-});
+Route::get('/showbook/{id}','showController@bookcontext' );  
 
-Route::get('/delete', 'BookController@deletee');
+Route::get('/manage', 'showController@ownbooklist');
 
-Route::post('/edit', 'BookController@postedit');
+Route::get('/delete/{id}', 'BookController@deletee');
+
+Route::get('/edit/{id}', 'BookController@postedit');
+
+Route::post('/comment/{id}', 'CommentController@postcomment');
 
 Route::get('/create', 'BookController@getcreate');
 Route::post('/create', 'BookController@postcreate');
@@ -107,6 +110,8 @@ Route::get('/signup', 'UserController@getsignup');
 Route::post('/signup', 'UserController@postsignup');
 
 Route::get('/signout', 'UserController@signout');
+
+Route::get('/search', 'searchController@search');
 
 
 Route::get('/setting','UserController@setting');

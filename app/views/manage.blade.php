@@ -35,37 +35,23 @@
 								<th>Delete</th>
 							</thead>
 							<tbody>  
-								<tr>
+								 @if ($booklist==NULL)
+                					<tr class="primary">
+                    				<td><h4><center><font color = "BLUE">You have no book</font></center></center></h4></td>
+                					</tr>
+                				@else 
+                					@for ($i=0; $i <count($booklist) ; $i++)
 									
-									<td class="col-md-8">Harry Potter</td>
-									<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-									<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-								</tr>
-								
-								<tr>
-									
-									<td class="col-md-8">Percy Jackson</td>
-									<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-									<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-								</tr>
-								
-								<tr>
-									
-									<td class="col-md-8">The mortal instrument</td>
-									<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-									<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-								</tr>
-								
-							</tbody>
-						</table>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
-	</div>
+									<tr>
+										<td> <class="col-md-8"> {{$booklist[$i]->getName()}} </td>
+										<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit{{$i}}" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+										<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete{{$i}}" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+									</tr>
 
-	<form class="form"  action="/edit" method="post">
-	<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+
+
+										<form class="form"  action="{{url('/edit').'/'.($booklist[$i]->getId())}}" method="get">
+	<div class="modal fade" id="edit{{$i}}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content" >
 				<div class="modal-header">
@@ -98,6 +84,7 @@
 					<div class="form-group">
 						<input class="form-control" name="bookPrice" type="text" placeholder="Price">
 					</div>
+					
 				</div>
 				<div class="modal-footer ">
 					<button type="submit" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
@@ -106,9 +93,10 @@
 		</div>
     </div>
 	</form>
-    
-	<form class="form"  action="/delete" method="get">
-    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+
+    <!-- delete -->
+	<form class="form"  action="{{url('/delete').'/'.($booklist[$i]->getId())}}" method="get">
+    <div class="modal fade" id="delete{{$i}}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -126,6 +114,22 @@
 		</div> 
     </div>
 	</form>
+
+									@endfor
+								@endif
+								
+								
+								
+							</tbody>
+						</table>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

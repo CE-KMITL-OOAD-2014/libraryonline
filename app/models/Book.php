@@ -155,7 +155,7 @@
     		return NULL;
     	}
 
-        echo "foundd";
+        //echo "foundd";
         //var_dump($data);
     	$obj->id=$data->id;
     	$obj->bookName=$data->bookName;
@@ -165,9 +165,79 @@
         $obj->bookPrice=$data->bookPrice;
         $obj->bookType=$data->bookType;
         $obj->avgbookRate=$data->avgbookRate;
-        echo "foundp";
+        //echo "foundp";
 
     	return $obj;
+
+    }
+
+     public static function getconById($id){
+        $obj=new Book;
+        $data=bookEloquent::find($id);
+        if($data==NULL){
+            echo "not found";
+            return NULL;
+        }
+
+        //echo "foundd";
+        //var_dump($data);
+        $obj->id=$data->id;
+        $obj->bookName=$data->bookName;
+        $obj->writerID=$data->writerID;
+        //$obj->isPublic=$data->isPublic;
+        //$obj->bookDetail=$data->bookDetail;
+        $obj->bookContext=$data->bookContext;
+        //$obj->bookPrice=$data->bookPrice;
+        //$obj->bookType=$data->bookType;
+        $obj->avgbookRate=$data->avgbookRate;
+        //echo "foundp";
+
+        return $obj;
+
+    }
+
+    public static function getBywriter($writerID){
+        $obj=new Book;
+        $data=bookEloquent::where('writerID',"=",$writerID)->get();
+        if($data==NULL){
+            echo "not found";
+            return NULL;
+        }
+        $obj->id=$data->id;
+        $obj->bookName=$data->bookName;
+        $obj->writerID=$data->writerID;
+        $obj->isPublic=$data->isPublic;
+        $obj->bookDetail=$data->bookDetail;
+        $obj->bookPrice=$data->bookPrice;
+        $obj->bookType=$data->bookType;
+        $obj->avgbookRate=$data->avgbookRate;
+    
+
+        return $obj;
+
+    }
+
+public static function getByname($bookName){
+        $obj=new Book;
+        $data=bookEloquent::where('bookName',"=",$bookName)->get();
+        if($data==NULL){
+            echo "not found";
+            return NULL;
+        }
+
+        //echo "foundd";
+        //var_dump($data);
+        $obj->id=$data->id;
+        $obj->bookName=$data->bookName;
+        $obj->writerID=$data->writerID;
+        $obj->isPublic=$data->isPublic;
+        $obj->bookDetail=$data->bookDetail;
+        $obj->bookPrice=$data->bookPrice;
+        $obj->bookType=$data->bookType;
+        $obj->avgbookRate=$data->avgbookRate;
+        //echo "foundp";
+
+        return $obj;
 
     }
 
@@ -175,7 +245,7 @@
         $edit=new Book;
     	$edit=bookEloquent::find($this->id);
     	//$edit->bookName=$this->bookName;
-    	//$edit->isPublic=$this->isPublic;
+    	$edit->writerID=$this->writerID;
     	$edit->bookDetail=$this->bookDetail;
         $edit->bookContext=$this->bookContext;
         $edit->bookPrice=$this->bookPrice;
@@ -193,6 +263,26 @@
 
         return $add->bookRate;
     }
+
+     public static function getallBook(){
+            $data=bookEloquent::all();
+            $size=count($data);
+            $book= array();
+            for($i=0;$i<$size;$i++){           
+                $obj=new Book;
+                $obj->id=$data[$i]->id;
+                $obj->bookName=$data[$i]->bookName;
+                $obj->writerID=$data[$i]->writerID;
+                $obj->isPublic=$data[$i]->isPublic;
+                $obj->bookDetail=$data[$i]->bookDetail;
+                $obj->bookPrice=$data[$i]->bookPrice;
+                $obj->bookType=$data[$i]->bookType;
+                $obj->avgbookRate=$data[$i]->avgbookRate;
+                $book[$i]=$obj;
+            }
+            
+            return $book; 
+        }
 
 
 }

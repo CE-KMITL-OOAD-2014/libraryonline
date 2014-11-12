@@ -8,7 +8,7 @@ class BookController extends BaseController{
 		$book=new Book;
 		$book->setName(Input::get('bookName'));
 		$book->setwriterID('userName');
-		//$book->setwriterIDInput::get('userName'));
+		$book->setwriterID(Auth::user()->id);
 		$book->setisPublic(Input::get('isPublic'));
 		$book->setbookDetail(Input::get('bookDetail'));
 		$book->setbookContext(Input::get('bookContext'));
@@ -19,32 +19,28 @@ class BookController extends BaseController{
 		return Redirect::to('/home');
 	}
 
-	public function postedit(){
-		$book=Book::getByID(5);
-		//$book->setId(5);
-		//$book->setName(Input::get('bookName'));
-		//$book->setwriterID('userName');
-		//$book->setwriterIDInput::get('userName'));
+	public function postedit($id){
+		$book=Book::getByID($id);
+		
 		$book->setisPublic(Input::get('isPublic'));
 		$book->setbookDetail(Input::get('bookDetail'));
 		$book->setbookContext(Input::get('bookContext'));
 		$book->setbookPrice(Input::get('bookPrice'));
-		//$book->setbookType(Input::get('bookType'));
 		$book->editBook();
 		echo "book has edit"; 
-		return View::make("manage");
+		return Redirect::to('/home');
 	}
 
-	public function deletee(){
-		$book=Book::getByID(5);
-		//$book->setId(5);
+	public function deletee($id){
+		$book=Book::getByID($id);
+		$book->setwriterID(0);
 		$book->setbookDetail("deleted book");
 		$book->setbookContext("deleted");
 		$book->setbookPrice(0);
 		$book->setbookType(10);
 		$book->editBook();
 		echo "book has deletedd"; 
-		return View::make("manage");
+		return Redirect::to('/home');
 
 	} //unfinish
 

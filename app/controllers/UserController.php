@@ -15,7 +15,8 @@ class UserController extends BaseController{
 	}
 
 	public function signout(){ //do end session
-		Session::flush();
+		//Session::flush();
+		Auth::logout();
 		echo "log out";
 		return Redirect::to('/firstpage');
 	}
@@ -25,14 +26,12 @@ class UserController extends BaseController{
 	}
 
 	public function firstpage(){
-		var_dump(Session::get('User'));
 		return View::make("firstpage");
 	}
 
 	public function signin(){
 		$credentials=Input::only('userName','password');
 		if(Auth::attempt($credentials)){
-			Session::put( 'User',$credentials);
 			return Redirect::intended('/home');
 		}
 		return Redirect::to('/firstpage');

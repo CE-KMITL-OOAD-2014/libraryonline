@@ -6,7 +6,9 @@ class Updatelist{
 	 public function getupdatelist()
     {
     	$this->lastid = DB::table('Book');
-    	$this->lastid = DB::getPdo()->lastInsertId();
+    	//$this->lastid =DB::connection('mysql')->pdo->lastInsertId();
+    	$this->lastid = DB::connection()->getPdo()->lastInsertId();
+    	var_dump($this->lastid);
         return $this->lastid;
     }
 

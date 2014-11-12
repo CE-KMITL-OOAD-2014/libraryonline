@@ -69,7 +69,7 @@
               </div>
             </div>
 			
-			 <!-- book context -->
+			 <!-- is book public -->
             <div class="form-group">
               <label class="col-md-1 control-label" for="message" required><font color = "#1E90FF">Status</font></label>
               <div class="col-md-11">

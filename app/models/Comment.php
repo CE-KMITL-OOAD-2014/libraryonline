@@ -1,9 +1,10 @@
 <?php
-class Comment extends Eloquent{
+class Comment {
 
 		private $Comment;
 		private $userID;
 		private $bookID;
+        private $rate;
 
 	public function getComment()
     {
@@ -35,13 +36,32 @@ class Comment extends Eloquent{
         $this->bookID = $bookID;
     }
 
+    public function getrate()
+    {
+        return $this->bookID;
+    }
+    
+    public function setrate($rate)
+    {
+        $this->rate = $rate;
+    }
+
      public function newComment(){
     	$new=new commentEloquent;
     	$new->Comment=$this->Comment;
     	$new->userID=$this->userID;
     	$new->bookID=$this->bookID;
+        $new->rate=$this->rate;
     	$new->save();
     }
+    
+
+    public function getbookcomment($id)
+    {
+        $comment = commentEloquent::where('bookID', '=', $id)->get();
+        return $comment;
+    }
+    
 
 
 }?>
