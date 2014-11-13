@@ -119,16 +119,28 @@
 								@endif
 								
 								
+
+
+
 								
 							</tbody>
 						</table>
 					<div class="clearfix"></div>
+
+
+<div class=" container container-right" style="margin-top:40px">
+	<div class="row">
+      <div class="col-md-12 col-md-offset-9 col-xs-12 col-xs-offset-5">
+			 <a href="../../../home"><button type="button" class="btn btn-success btn-lg"  ><span class="glyphicon glyphicon-arrow-right"></span> Back to Home &nbsp </button></a>
+      </div>
+	</div>
+</div>
+
+
 				</div>
 			</div>
 		</div>
 	</div>
-
-
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

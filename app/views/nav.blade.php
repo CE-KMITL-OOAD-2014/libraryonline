@@ -107,7 +107,7 @@
                 <li class="divider"></li>
                 <li><a href="../../../manage">Manage Book <span class="glyphicon glyphicon-pencil pull-right"></span></a></li>
                 <li class="divider"></li>
-                <li><a href="../../../#">Book Request &nbsp <span class="badge pull-right"> 2 </span></a></li>
+                <li><a href="../../../request">Book Request &nbsp <span class="badge pull-right"> </span></a></li>
                 <li class="divider"></li>
                 <li><a href="../../../signout">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
             </ul>

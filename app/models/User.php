@@ -72,7 +72,7 @@
 
     public function getfinance()
     {
-        return $this->$finance;
+        return $this->finance;
     }
 
     public function setfinance($finance)
@@ -99,7 +99,6 @@
     	$obj->id=$data->id;
     	$obj->userName=$data->userName;
     	$obj->password=$data->password;
-    	//$obj->email=$data->email;
         $obj->finance=$data->finance;
 
     	return $obj;
@@ -109,7 +108,6 @@
     public function editUser(){
         $edit=new User;
     	$edit=userEloquent::find($this->id);
-    	$edit->userName=$this->userName;
     	$edit->password=$this->password;
     	$edit->finance=$this->finance;
     	$edit->save();

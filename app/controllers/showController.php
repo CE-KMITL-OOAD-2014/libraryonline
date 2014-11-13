@@ -9,18 +9,28 @@ class showController extends BaseController{
 	}
 
 
-
 	public function bookcontext($id){
-		//if access ไมผ่าน
-		//return Redirect::to('/buybook/'.$id); 
 
-		//if access ผ่าน
-		$book=Book::getconByID($id);
-		//$allComments = CommentController::showcomment($id);
-		$comment=new Comment;
-		$temp=$comment->getbookcomment($id);
-		//var_dump($book);
-		return View::make("showbook")->with(array('book' => $book , 'comment' => $temp ));
+		$chk=new accessBook;
+		if ($chk->checkaccess($id,Auth::user()->id) == 0) {  //not access
+			return Redirect::to('buybook/'.$id); 
+		}else{
+			//else if access ผ่าน
+			$book=Book::getconByID($id);
+			$comment=new Comment;
+			$temp=$comment->getbookcomment($id);
+			//endif
+			return View::make("showbook")->with(array('book' => $book , 'comment' => $temp ));
+		}
+		
+	}
+
+	public function addkeytouser($id){
+		$new=new accessBook;
+		$new->setuserId(Auth::user()->id);
+		$new->setbookId($id);
+		$new->newreqkey();
+		//return 
 	}
 
 }

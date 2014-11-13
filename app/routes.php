@@ -51,12 +51,9 @@ return View::make("howto");
 });   
 
 // Route::get('/c1', function() {
-// return View::make("c1");
+// return View::make("buy");
 // });   
 
-// Route::get('/c2', function() {
-// return View::make("c2");
-// });  
 
 // Route::get('/c3', function() {
 // return View::make("c3");
@@ -86,13 +83,19 @@ return View::make("howto");
 // return View::make("c9");
 // });  
 
-// Route::get('/c10', function() {
-// return View::make("c10");
-// });
+ Route::get('/request', 'buyController@showrequest' );
+
+ Route::get('/accept/{userid}/{bookid}', 'buyController@addkey' );
+
+ Route::get('/canclereq/{userid}/{bookid}', 'buyController@canclereq' );
 
 Route::get('/cata/{id}','searchController@searchtypebook' );  
 
 Route::get('/showbook/{id}','showController@bookcontext' );  
+
+Route::get('/buybook/{id}','buyController@buybook' ); 
+
+Route::get('/finance/{id}', 'buyController@showfinance' );
 
 Route::get('/manage', 'showController@ownbooklist');
 
@@ -116,7 +119,7 @@ Route::get('/signout', 'UserController@signout');
 Route::get('/search', 'searchController@search');
 
 
-Route::get('/setting','UserController@setting');
+Route::get('/setting','UserController@setting');//ยังไม่ทำ
 
 Route::get('/', 'UserController@test'); 
 
