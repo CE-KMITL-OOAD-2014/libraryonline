@@ -5,8 +5,6 @@
 		private $id;
 		private $userName;
 		private $password;
-		// private $keyBook;
-		// private $bookList;
         private $finance;
 
 
@@ -46,29 +44,6 @@
       
     }
 
-    
-    // public function getkeyBook()
-    // {
-    //     return json_decode($this->keyBook);
-    // }
-    
-   
-    // public function setkeyBook($keyBook)
-    // {
-    //     $this->keyBook = json_encode($keyBook);
-    // }
-
-    
-    // public function getbookList()
-    // {
-    //     return json_decode($this->image);
-    // }
-    
-   
-    // public function setbookList($bookList)
-    // {
-    //     $this->bookList = json_encode($bookList);
-    // }
 
     public function getfinance()
     {

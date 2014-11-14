@@ -99,7 +99,14 @@
    <ul class="nav navbar-nav">
      
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{Auth::user()->userName}} <span class= "glyphicon glyphicon-user pull-right"></span></a>
+        @if(Auth::check())
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{$name=Auth::user()->userName}} <span class= "glyphicon glyphicon-user pull-right"></span></a>
+            
+        @else 
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Guest <span class= "glyphicon glyphicon-user pull-right"></span></a>
+
+        @endif
+           
             <ul class="dropdown-menu">
                 <li><a href="../../../setting">Account Setting<span class="glyphicon glyphicon-cog pull-right"></span></a></li>
                 <li class="divider"></li>

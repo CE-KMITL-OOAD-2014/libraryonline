@@ -21,7 +21,7 @@
                             <img src="hp7.jpg" class="img-responsive img-circle" />
                         </div>
                         <div class="col-xs-12 col-sm-9">     
-							 <span class="glyphicon glyphicon-pencil text-muted c-info">. Written by ID {{$booklist[$i]->getWritername()}} </span>
+							 <span class="glyphicon glyphicon-pencil text-muted c-info">. Written by  {{$booklist[$i]->getWritername()}} </span>
 							<p> &nbsp &nbsp &nbsp  {{$booklist[$i]->getbookDetail()}}</p>
                         </div>
                         <div class="clearfix"></div>

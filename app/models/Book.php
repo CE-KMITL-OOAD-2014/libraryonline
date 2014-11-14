@@ -10,8 +10,6 @@
         private $bookContext;
         private $bookPrice;
         private $bookType;
-        // private $bookRate;
-        private $numRate;
         private $avgbookRate;
 
 
@@ -105,25 +103,6 @@
         $this->bookType = $bookType;
     }
 
-    // public function getbookRate()
-    // {
-    //     return $this->bookRate;
-    // }
-
-    // public function setbookRate($bookRate)
-    // {
-    //     $this->bookRate = $bookRate;
-    // }
-
-    public function getnumRate()
-    {
-        return $this->numRate;
-    }
-
-    public function setnumRate($numRate)
-    {
-        $this->numRate = $numRate;
-    }
 
     public function getavgbookRate()
     {
@@ -205,50 +184,7 @@
 
     }
 
-    // public static function getBywriter($writerID){
-    //     $obj=new Book;
-    //     $data=bookEloquent::where('writerID',"=",$writerID)->get();
-    //     if($data==NULL){
-    //         echo "not found";
-    //         return NULL;
-    //     }
-    //     $obj->id=$data->id;
-    //     $obj->bookName=$data->bookName;
-    //     $obj->writerID=$data->writerID;
-    //     $obj->isPublic=$data->isPublic;
-    //     $obj->bookDetail=$data->bookDetail;
-    //     $obj->bookPrice=$data->bookPrice;
-    //     $obj->bookType=$data->bookType;
-    //     $obj->avgbookRate=$data->avgbookRate;
-    
-
-    //     return $obj;
-
-    // }
-
-// public static function getByname($bookName){
-//         $obj=new Book;
-//         $data=bookEloquent::where('bookName',"=",$bookName)->get();
-//         if($data==NULL){
-//             echo "not found";
-//             return NULL;
-//         }
-
-//         //echo "foundd";
-//         //var_dump($data);
-//         $obj->id=$data->id;
-//         $obj->bookName=$data->bookName;
-//         $obj->writerID=$data->writerID;
-//         $obj->isPublic=$data->isPublic;
-//         $obj->bookDetail=$data->bookDetail;
-//         $obj->bookPrice=$data->bookPrice;
-//         $obj->bookType=$data->bookType;
-//         $obj->avgbookRate=$data->avgbookRate;
-//         //echo "foundp";
-
-//         return $obj;
-
-//     }
+   
 
     public static function getnamebyId($id){
         $obj=new Book;
@@ -281,15 +217,6 @@
         $edit->save();
     }
 
-    // public function addrate($bookRate){
-    //     $add=new Book;
-    //     $add=bookEloquent::find($this->id);
-    //     $add->bookRate+=$bookRate;
-    //     $add->numRate++;
-    //     $add->save();
-
-    //     return $add->bookRate;
-    // }
 
      public static function getallBook(){
             $data=bookEloquent::all();
