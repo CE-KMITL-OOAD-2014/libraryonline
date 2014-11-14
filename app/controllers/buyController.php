@@ -49,6 +49,8 @@ class buyController extends BaseController{
    		$key->setuserId($userid);
    		$key->setbookId($bookid);
    		$key->addnewkey();
+   		$reqq=new buyBook;
+   		$reqq->deletereg($userid,$bookid);
    		return Redirect::to('request'); 
    	}
 

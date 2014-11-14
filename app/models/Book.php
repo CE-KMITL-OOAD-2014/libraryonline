@@ -10,7 +10,7 @@
         private $bookContext;
         private $bookPrice;
         private $bookType;
-        private $bookRate;
+        // private $bookRate;
         private $numRate;
         private $avgbookRate;
 
@@ -105,15 +105,15 @@
         $this->bookType = $bookType;
     }
 
-    public function getbookRate()
-    {
-        return $this->bookRate;
-    }
+    // public function getbookRate()
+    // {
+    //     return $this->bookRate;
+    // }
 
-    public function setbookRate($bookRate)
-    {
-        $this->bookRate = $bookRate;
-    }
+    // public function setbookRate($bookRate)
+    // {
+    //     $this->bookRate = $bookRate;
+    // }
 
     public function getnumRate()
     {
@@ -145,6 +145,15 @@
         $new->bookPrice=$this->bookPrice;
         $new->bookType=$this->bookType;
     	$new->save();
+        $new->get();
+        if ($new->isPublic== 0) {
+        	# code...
+        	  $key=new accessBook;
+        	$key->setbookId($new->id);
+        	$key->setuserId($new->writerID);
+        	$key->addnewkey();
+        }
+      
     }
 
     public static function getById($id){
@@ -241,6 +250,16 @@
 
 //     }
 
+    public static function getnamebyId($id){
+        $obj=new Book;
+        $data=bookEloquent::find($id);
+        if($data==NULL){
+            return "username not found";
+        }
+        return $data->bookName;
+
+    }
+
     public function editBook(){
         $edit=new Book;
     	$edit=bookEloquent::find($this->id);
@@ -291,6 +310,11 @@
             
             return $book; 
         }
+
+        public function getwritername(){
+            $user=new User;
+            return $user->getnamebyId($this->writerID);
+        } 
 
 
 }

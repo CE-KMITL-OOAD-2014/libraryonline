@@ -51,7 +51,7 @@
             }
             return 0;  //don't have key
           }
-          return 1; //
+          return 0; //
 
           
     	}
@@ -61,12 +61,23 @@
           $book=Book::getById($tbookid);
           $chk=new accessBook;
           if ($chk->getisPublic($tbookid) == 0) { //if book is public must return true
-            if ($chk->checkkey($tbookid,$tuserid== 0)) { //check key if don't have key must return false
+            if ($chk->checkkey($tbookid,$tuserid)== 0) { //check key if don't have key must return false
               
               return 0;
             }
           }
           return 1;
       }
+
+
+        public function getwritername(){
+            $user=new User;
+            return $user->getnamebyId($this->userid);
+        } 
+
+        public function getbookname(){
+            $book=new Book;
+            return $book->getnamebyId($this->bookid);
+        } 
 	}
  ?>

@@ -58,7 +58,22 @@ class Comment {
 
     public function getbookcomment($id)
     {
-        $comment = commentEloquent::where('bookID', '=', $id)->get();
+        $temp = commentEloquent::where('bookID', '=', $id)->get();
+         $size=count($temp);
+        if($size==0){ 
+          //echo "string";
+          return NULL; }
+
+        $comment=array( );
+
+        for($i=0;$i<$size;$i++){
+          $obj=new Comment;
+          $obj->setComment($temp[$i]->Comment);
+          $obj->setuserID($temp[$i]->userID);
+          $obj->setbookID($temp[$i]->bookID);
+          $obj->setrate($temp[$i]->rate);
+          $comment[$i]=$obj;
+        }
         return $comment;
     }
     
@@ -72,6 +87,9 @@ class Comment {
         $ans=$allrate/count($comment);
         return $ans;
     }
-
+    public function getusername(){
+            $user=new User;
+            return $user->getnamebyId($this->userID);
+        } 
 
 }?>

@@ -21,7 +21,18 @@ class UserController extends BaseController{
 		return Redirect::to('/firstpage');
 	}
 
-	public function setting(){
+	public function postsetting(){
+		$user=new User;
+		$user->setId(Auth::user()->id);
+		$user->setPassword(Hash::make(Input::get('password')));
+		$user->setfinance(Input::get('finance'));
+		$user->editUser();
+		echo "data has been change";
+		return View::make("setting");
+	}
+
+	public function getsetting(){
+
 		return View::make("setting");
 	}
 
@@ -39,9 +50,11 @@ class UserController extends BaseController{
 
 
 	public function test(){
-		$book=new Comment;
-		$ans=$book->getbookrate(1);
-		var_dump($ans);
+		$book=new User;
+		var_dump($book->getnamebyId(1));
+		var_dump($book->getIdbyname($book->getnamebyId(1)));
+		$book=new Book;
+		var_dump($book->getnamebyId(1));
 		return '----- pp';
 	}
 

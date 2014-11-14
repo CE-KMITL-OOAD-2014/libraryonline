@@ -39,12 +39,7 @@
 
 
 
-Route::get('/home', function() {
-	//echo "string";
-	//var_dump(Session::get('User'));
-	//var_dump(Auth::user()->userName);
-return View::make("home");
-});   
+Route::get('/home', 'showController@updatelist');   
 
 Route::get('/howto', function() {
 return View::make("howto");
@@ -119,7 +114,8 @@ Route::get('/signout', 'UserController@signout');
 Route::get('/search', 'searchController@search');
 
 
-Route::get('/setting','UserController@setting');//ยังไม่ทำ
+Route::get('/setting','UserController@getsetting');//ยังไม่ทำ
+Route::post('/setting','UserController@postsetting');
 
 Route::get('/', 'UserController@test'); 
 

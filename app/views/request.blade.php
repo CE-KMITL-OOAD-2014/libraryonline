@@ -45,7 +45,7 @@
 								@for ($i=0; $i <count($request) ; $i++)
 
 								<tr>
-									<td class="col-md-8"><h4><font color = "#1E90FF">{{$request[$i]->getbookId()}}</font> &nbsp  &nbsp  from member  &nbsp  &nbsp <font color = "#FF1493">{{$request[$i]->getuserId()}}</font></h4></td> 
+									<td class="col-md-8"><h4><font color = "#1E90FF">{{$request[$i]->getbookname()}}</font> &nbsp  &nbsp  from member  &nbsp  &nbsp <font color = "#FF1493">{{$request[$i]->getwritername()}}</font></h4></td> 
 									
 										<td><a href = "{{url('/accept').'/'.$request[$i]->getuserId().'/'.$request[$i]->getbookId()}}" <p> &nbsp &nbsp <button class="btn btn-success btn-xs" ><span class="glyphicon glyphicon-ok"></span></button></p></a></td>
 									

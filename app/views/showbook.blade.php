@@ -19,7 +19,7 @@
                 </div>	
 			</div>
 			<div class="col-xs-6  col-md-6">
-					<p class="text-right"> <h3><font  color = "#00FF007">By ID {{$book->getwriterID()}}</font></h3></p>
+					<p class="text-right"> <h3><font  color = "#00FF007">By ID {{$book->getwritername()}}</font></h3></p>
 					
 					</div>
 			</div>
@@ -63,9 +63,9 @@
 	<!-- comment -->
 		<div class="well">
 
-				<font size="3" color= "#1E90FF" >Comment {{$i+1}} </font> &nbsp by <font color = "#1E90FF"> {{$comment[$i]->userID}} </font> rated <font color = "#1E90FF"> {{$comment[$i]->rate}} </font>
+				<font size="3" color= "#1E90FF" >Comment {{$i+1}} </font> &nbsp by <font color = "#1E90FF"> {{$comment[$i]->getusername()}} </font> rated <font color = "#1E90FF"> {{$comment[$i]->getrate()}} </font>
 
-					<p>&nbsp &nbsp &nbsp  {{$comment[$i]->Comment}}</p>
+					<p>&nbsp &nbsp &nbsp  {{$comment[$i]->getComment()}}</p>
 		
 		</div>
 			@endfor

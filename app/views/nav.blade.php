@@ -90,7 +90,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="home"><img class="img-responsive" src="../../../brand.png"></a>
+    <a class="navbar-brand" href="../../../home"><img class="img-responsive" src="../../../brand.png"></a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->

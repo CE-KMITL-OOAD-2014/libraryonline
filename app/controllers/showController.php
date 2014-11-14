@@ -33,5 +33,12 @@ class showController extends BaseController{
 		//return 
 	}
 
+	public function updatelist(){
+		$list=new Updatelist;
+		$updatelist=$list->getupdatelist();
+		$toplist=$list->gettoplist();
+		return View::make("home")->with(array('list' => $updatelist , 'top' => $toplist));
+	}
+
 }
 ?>

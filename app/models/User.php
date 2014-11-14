@@ -5,8 +5,8 @@
 		private $id;
 		private $userName;
 		private $password;
-		private $keyBook;
-		private $bookList;
+		// private $keyBook;
+		// private $bookList;
         private $finance;
 
 
@@ -47,28 +47,28 @@
     }
 
     
-    public function getkeyBook()
-    {
-        return json_decode($this->keyBook);
-    }
+    // public function getkeyBook()
+    // {
+    //     return json_decode($this->keyBook);
+    // }
     
    
-    public function setkeyBook($keyBook)
-    {
-        $this->keyBook = json_encode($keyBook);
-    }
+    // public function setkeyBook($keyBook)
+    // {
+    //     $this->keyBook = json_encode($keyBook);
+    // }
 
     
-    public function getbookList()
-    {
-        return json_decode($this->image);
-    }
+    // public function getbookList()
+    // {
+    //     return json_decode($this->image);
+    // }
     
    
-    public function setbookList($bookList)
-    {
-        $this->bookList = json_encode($bookList);
-    }
+    // public function setbookList($bookList)
+    // {
+    //     $this->bookList = json_encode($bookList);
+    // }
 
     public function getfinance()
     {
@@ -91,11 +91,9 @@
     public static function getById($id){
         $obj=new User;
     	$data=userEloquent::find($id);
-    	if($data==NULL){
-            echo "not found";
+    	if($data==NULL){           
     		return NULL;
     	}
-        echo "found";
     	$obj->id=$data->id;
     	$obj->userName=$data->userName;
     	$obj->password=$data->password;
@@ -105,13 +103,34 @@
 
     }
 
+        public static function getnamebyId($id){
+        $data=userEloquent::find($id);
+            if($data==NULL){
+             return "username not found";
+            }
+
+            return $data->userName;
+
+        }
+
+         public static function getIdbyname($name){
+        $data=userEloquent::where('userName','=',$name)->get();
+            if($data==NULL){
+             return 0;
+            }
+
+            return $data[0]->id;
+
+        }
+
     public function editUser(){
-        $edit=new User;
     	$edit=userEloquent::find($this->id);
     	$edit->password=$this->password;
     	$edit->finance=$this->finance;
     	$edit->save();
     }
+
+    
 
 
 }

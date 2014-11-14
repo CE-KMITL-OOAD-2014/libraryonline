@@ -40,7 +40,7 @@
 								<form role="form" action="/firstpage" method="post">
 									<fieldset>
 										<div class="row">
-											<center><img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt=""></center>
+											<center><img class="../../../profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt=""></center>
 										</div>							
 										<div class="row">
 											<div class="col-sm-12 col-md-10  col-md-offset-1 ">

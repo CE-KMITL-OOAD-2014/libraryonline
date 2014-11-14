@@ -30,8 +30,11 @@
           $new->userid=$this->userid;
           $new->save();
       } 
-      public function deletereg()
+      public function deletereg($tuserid,$tbookid)
       {
+        $regg=buybookEloquent::where('userid','=',$tuserid);
+        $regg=$regg->where('bookid','=',$tbookid);
+        $regg=$regg->delete();
           //return $this->bookid;
       } 
 
@@ -60,6 +63,15 @@
 
         return $tempreq;
       }
-	
+
+        public function getwritername(){
+            $user=new User;
+            return $user->getnamebyId($this->userid);
+        } 
+
+        public function getbookname(){
+            $book=new Book;
+            return $book->getnamebyId($this->bookid);
+        } 
 	}
  ?>
