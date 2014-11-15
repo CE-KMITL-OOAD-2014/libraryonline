@@ -57,17 +57,19 @@ class Updatelist{
           $obj->setavgbookRate($temp[$i]->avgbookRate);
           $list[$i]=$obj;
         }
-
+        var_dump($chk); 
         if ($chk==0) {
           $temp2=bookEloquent::where('avgbookRate','=', 4 )->get();
           $size2=count($temp2);
           if ($size+$size2<10) {
-            $num=$size2;
+            $num=($size+$size2);
           }else{
             $num=10;
           }
-          for($i=$size;$i<$num;$i++){
-              $obj=new Book;
+          var_dump($num);
+          for($j=$size;$j<$num;$j++){
+            $i=$j-$size;
+             $obj=new Book;
              $obj->setId($temp2[$i]->id);
              $obj->setName($temp2[$i]->bookName);
              $obj->setwriterID($temp2[$i]->writerID);
@@ -76,11 +78,12 @@ class Updatelist{
              $obj->setbookPrice($temp2[$i]->bookPrice);
              $obj->setbookType($temp2[$i]->bookType);
              $obj->setavgbookRate($temp2[$i]->avgbookRate);
-             $list[$i]=$obj;
+             $list[$j]=$obj;
           }
+
         }
 
-      //var_dump($list);
+      
         return $list;
     }
 

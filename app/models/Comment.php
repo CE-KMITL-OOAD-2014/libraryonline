@@ -38,7 +38,7 @@ class Comment {
 
     public function getrate()
     {
-        return $this->bookID;
+        return $this->rate;
     }
     
     public function setrate($rate)
@@ -74,6 +74,7 @@ class Comment {
           $obj->setrate($temp[$i]->rate);
           $comment[$i]=$obj;
         }
+        //var_dump($comment);
         return $comment;
     }
     
