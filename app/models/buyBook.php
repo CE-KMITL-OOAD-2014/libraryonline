@@ -1,82 +1,82 @@
 <?php
 
-	class buyBook {
+class buyBook {
 
-		private $bookid;
-    private $userid;
+  private $bookid;
+  private $userid;
 
-		  public function getbookId()
-    	{
-      		return $this->bookid;
-   		}	
-    	public function setbookId($bookid)
-    	{
-        	$this->bookid = $bookid;
-    	}
-      public function getuserId()
-      {
-          return $this->userid;
-      } 
+  public function getbookId()
+  {
+    return $this->bookid;
+  }	
+  public function setbookId($bookid)
+  {
+   $this->bookid = $bookid;
+ }
+ public function getuserId()
+ {
+  return $this->userid;
+} 
 
-      public function setuserId($userid)
-      {
-          $this->userid = $userid;
-      }
+public function setuserId($userid)
+{
+  $this->userid = $userid;
+}
 
 	  //record data into database
-      public function newreqkey()
-      {
-          $new=new buybookEloquent;
-          $new->bookid=$this->bookid;
-          $new->userid=$this->userid;
-          $new->save();
-		  return $new;
-      }
-	  
+public function newreqkey()
+{
+  $new=new buybookEloquent;
+  $new->bookid=$this->bookid;
+  $new->userid=$this->userid;
+  $new->save();
+  return $new;
+}
+
 	  //to delete request of private book
-      public function deletereg($tuserid,$tbookid)
-      {
-        $regg=buybookEloquent::where('userid','=',$tuserid);
-        $regg=$regg->where('bookid','=',$tbookid);
-        $regg=$regg->delete();
+public function deletereg($tuserid,$tbookid)
+{
+  $regg=buybookEloquent::where('userid','=',$tuserid);
+  $regg=$regg->where('bookid','=',$tbookid);
+  $regg=$regg->delete();
           //return $this->bookid;
-      } 
+} 
 
 	  //check request of a private book that it is still in database or not.
-      public function checkreq($tuserid,$tbookid){
-        $reqq=buybookEloquent::where('userid','=',$tuserid)->get();
-          for($i=0;$i<count($reqq);$i++){
+public function checkreq($tuserid,$tbookid){
+  $reqq=buybookEloquent::where('userid','=',$tuserid)->get();
+  for($i=0;$i<count($reqq);$i++){
               if($reqq[$i]->bookid==$tbookid)return 1; //have req  
             }
             return 0; 
-      }
+          }
 
-      public function getbybookid($tbookid){
-        $reqq=buybookEloquent::where('bookid','=',$tbookid)->get();
+          public function getbybookid($tbookid){
+            $reqq=buybookEloquent::where('bookid','=',$tbookid)->get();
 
-        if (count($reqq)==0) {
-          return NULL;
-        }
+            if (count($reqq)==0) {
+              return NULL;
+            }
 
-        $tempreq=array();
-        for ($i=0; $i < count($reqq); $i++) { 
-           $obj=new buyBook;
-           $obj->setuserId($reqq[$i]->userid);
-           $obj->setbookId($reqq[$i]->bookid);
-           $tempreq[$i]=$obj;
-        }
+            $tempreq=array();
+            for ($i=0; $i < count($reqq); $i++) { 
+             $obj=new buyBook;
+             $obj->setuserId($reqq[$i]->userid);
+             $obj->setbookId($reqq[$i]->bookid);
+             $tempreq[$i]=$obj;
+           }
 
-        return $tempreq;
-      } 
+           return $tempreq;
+         } 
 
-        public function getwritername(){
-            $user=new User;
-            return $user->getnamebyId($this->userid);
+         public function getwritername(){
+          $user=new User;
+          return $user->getnamebyId($this->userid);
         } 
 
         public function getbookname(){
-            $book=new Book;
-            return $book->getnamebyId($this->bookid);
+          $book=new Book;
+          return $book->getnamebyId($this->bookid);
         } 
-	}
- ?>
+      }
+      ?>

@@ -1,10 +1,10 @@
 <?php
 class showController extends BaseController{
 
-public function __construct()
-{
-    $this->beforeFilter('force.ssl');
-}
+	public function __construct()
+	{
+		$this->beforeFilter('force.ssl');
+	}
 
 	public function ownbooklist(){
 		$search=new Search;

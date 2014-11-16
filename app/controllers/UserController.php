@@ -2,15 +2,15 @@
 class UserController extends BaseController{
 
 	public function __construct()
-{
-    $this->beforeFilter('force.ssl');
-}
+	{
+		$this->beforeFilter('force.ssl');
+	}
 	
 	public function getsignup(){
 		if (Auth::check()) {
 			return Redirect::to('../../../home');
 		}
-		 return View::make("signup");  
+		return View::make("signup");  
 	}
 
 	public function postsignup(){ 
