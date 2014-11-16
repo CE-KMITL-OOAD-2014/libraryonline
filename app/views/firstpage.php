@@ -18,7 +18,8 @@
     <![endif]-->
   </head>
   <body>
-	
+  
+	<!-- introduce website part -->
 	<marquee><h2>On-line Library is available now <small> Do you want to read some books?</small></h2></marquee>
 		<img src="booktop.jpg" class="img-responsive" alt="Responsive image">
 	
@@ -31,6 +32,8 @@
 						For private books, you can access the books by purchase and the process is simple. Also you can be a writer, just create your own book. Let release your imagination here!!!</p>
 						<p><a class="btn btn-primary btn-lg " href="../../../home" role="button">Home Page &nbsp <span class="glyphicon glyphicon-arrow-right"></span></a></p>
 				</div>
+				
+				<!-- sign in part -->
 				<div class = "col-md-6">
 					<div class="container" style="margin-top:40px">			
 						<div class="panel panel-default">
@@ -69,6 +72,8 @@
 									</fieldset>
 								</form>
 							</div>
+							
+							<!-- sign up prat-->
 							<div class="panel-footer ">
 								Don't have an account! <a href="signup" onClick=""> Sign Up Here </a>
 							</div>

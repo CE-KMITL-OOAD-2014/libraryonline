@@ -10,7 +10,7 @@
 	<center><h2><font color = "white" ><b>{{$typename}}</b></font></h2></center>
 </div>
 
-
+<!-- when does not have any book in category -->
 
 @if ($booklist==NULL)
      <tr class="primary">
@@ -18,7 +18,8 @@
      </tr>
 @else 
 @for ($i=0; $i <count($booklist) ; $i++)
-<!-- book -->
+
+<!-- search all book from category that user wants -->
 	<div class="col-md-6 col-md-offset-3" style="margin-top:23px;">
 		<div class="panel panel-default ">
 			<div class="panel-heading">
@@ -30,17 +31,14 @@
                         </div>
                         <div class="col-xs-12 col-sm-9">     
 							 <span class="glyphicon glyphicon-pencil text-muted c-info">. Written by  {{$booklist[$i]->getwritername()}} </span>
-							<p> &nbsp &nbsp &nbsp  {{$booklist[$i]->getbookDetail()}}</p>
+							<pre> &nbsp &nbsp &nbsp  {{$booklist[$i]->getbookDetail()}}</pre>
                         </div>
                         <div class="clearfix"></div>
-                    </li>
+                </li>
 		</div>
-
 	</div>
  @endfor
-@endif
-		
-
+@endif		
 </div>
  
  

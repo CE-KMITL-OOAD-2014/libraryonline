@@ -30,7 +30,7 @@
             <div class="form-group">
               <label class="col-md-1 control-label" for="name" ><font color = "#1E90FF">Name</font></label>
               <div class="col-md-11">
-                <input id="name" name="bookName" type="text" placeholder="name of a book" class="form-control" required>
+                <input id="name" name="bookName" type="text" placeholder="name of a book" class="form-control" pattern=".{1,50}" required title = "1 to 50 characters">
               </div>
             </div>
 

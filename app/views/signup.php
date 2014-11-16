@@ -30,6 +30,7 @@
 			<h2>Please Sign Up <small>It's free and always will be.</small></h2>
 			<hr class="colorgraph">
 			
+			<!-- form -->
 			<div class="form-group">
 				<input type="text" name="userName" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3" required>
 			</div>
@@ -59,7 +60,8 @@
 		</form>
 	</div>
 </div>
-<!-- Modal -->
+
+<!-- condition modal -->
 <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">

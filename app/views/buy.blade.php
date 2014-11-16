@@ -22,12 +22,15 @@
 	<script src="http://templateplanet.info/tooltip.js"></script>
 	<script src="http://templateplanet.info/modal.js"></script>
   
+  <!-- this form for private book -->
   <div class="container" style="margin-top:40px">
 	<div class="row">
       <div class="col-md-12">
-		
+	
 				<legend class="text-center"><h3><font color = "#FFFF00" size = "6">You are not allow to read this book!!!</font></h3></legend>
 					<div class="alert alert-default"><font color= "white" size = "3"> <span class="glyphicon glyphicon-info-sign"></span> You have to buy the book first. Do you want to buy this book?</font></div>
+			
+			<!--Ask for buying -->
 			<div class="col-md-3" "col-md-offset-2">
 				<p><button class="btn btn-success btn-lg"  style="width: 50%;" data-title="Buy" data-toggle="modal" data-target="#buy" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-shopping-cart"></span> Buy</button></p>
 			</div>
@@ -35,6 +38,7 @@
 				<a href = "../../home" <button type="button" class="btn btn-warning btn-lg"  style="width: 50%;"><span class="glyphicon glyphicon-remove"></span> No</button></a>
 			</div>
 				
+			<!-- to confirm buying  -->	
 					<div class="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="buy" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -47,13 +51,11 @@
 								</div>
 								<div class="modal-footer ">
 									<a href = {{url('/finance').'/'.$id}} <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button></a>
-									<button type="button" class="btn btn-danger "  close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span> No</button>
+									<button type="button" class="btn btn-danger "  close" data-dismiss="modal" aria-hidden="true"> <span class="glyphicon glyphicon-remove"></span> No</button>
 								</div>
 							</div> 
 						</div> 
 					</div>
-				
-		
         </div>
     </div>
   </div>

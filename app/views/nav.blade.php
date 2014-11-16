@@ -22,10 +22,8 @@
   
   
   
-  
+  <!-- Slide view-->
   <div  style = "background-color:black;">
-  
-    
     <div class="row">
         <div class="col-md-12">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -70,13 +68,7 @@
 </div>
 
   
-  
-  
-  
-  
-  
-  
-  
+  <!-- nav bar-->
     <div class = "row">
     <nav class="navbar navbar-inverse navbar-static-top container-fluid" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -103,7 +95,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Guest <span class= "glyphicon glyphicon-user pull-right"></span></a>
 
         @endif
-           
+           <!-- user -->
             <ul class="dropdown-menu">
                 <li><a href="../../../setting">Account Setting<span class="glyphicon glyphicon-cog pull-right"></span></a></li>
                 <li class="divider"></li>
@@ -117,7 +109,9 @@
             </ul>
         </li>
            <li class="nonactive"><a href="../../../home"><span class="glyphicon glyphicon-home"></span> &nbsp Home </a></li>
-        <li class="dropdown thumb-dropdown">
+        
+		<!-- Categories -->
+		<li class="dropdown thumb-dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-align-justify"></span> &nbsp Categories <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li role="presentation" class="dropdown-header"></li>
@@ -204,9 +198,12 @@
             
           </ul>
         </li>
+		
+		<!-- how to buy -->
         <li class="nonactive"><a href="../../../howto"><span class="glyphicon glyphicon-shopping-cart"></span> &nbsp How to buy </a></li>
       </ul>
       
+	  <!-- search -->
    <form class="form" action="../../../search" method = "get">
    <fieldset>
    <div class="form-group">
@@ -221,9 +218,6 @@
         </form> 
         </div>
     </div>
-
-
-
     <div class="form-group">
     <div class="bs-docs-example col-md-2">
             <select class="selectpicker multiselect multiselect-icon"  name="searchType" style="margin-top:3px;">      
@@ -234,12 +228,6 @@
     </div>
     </fieldset>
     </form>
-
-   
-
-        
-  
-
   </div><!-- /.navbar-collapse -->
 </nav>
 </div>
@@ -249,11 +237,6 @@
         
     <!-- JavaScrip Search Plugin -->
     <script src="//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js"></script>
-    
-
-  
-  
-  
 		</br>
         <p><center><font color = "white">© Copyright 2014 ~ Bootstrap</font></center></br></p>
 

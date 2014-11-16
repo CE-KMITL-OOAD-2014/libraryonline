@@ -40,6 +40,15 @@
 		
 	</div>
 	
+	<!-- back to home page-->
+					<div class=" container container-right" style="margin-top:40px">
+						<div class="row">
+							<div class="col-md-12 col-md-offset-5 col-xs-12 col-xs-offset-3">
+								<a href="../../../home"><button type="button" class="btn btn-success btn-lg"  ><span class="glyphicon glyphicon-arrow-right"></span> Back to Home &nbsp </button></a>
+							</div>
+						</div>
+					</div>
+	
 	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

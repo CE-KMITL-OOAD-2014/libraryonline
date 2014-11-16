@@ -5,6 +5,7 @@
 
   <a href="http://bootsnipp.com/mouse0270/snippets/4l0k2" class="btn btn-danger hide" id="back-to-bootsnipp">Back to Bootsnipp</a>
 
+ <!-- to show financial user -->
 <div class="container">
      <div class="row col-sm-5 col-md-offset-4 col-md-5" style="margin-top:20px;" >
        	<div class="panel panel-default">

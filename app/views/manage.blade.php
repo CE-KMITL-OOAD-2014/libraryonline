@@ -35,13 +35,16 @@
 								<th><font color = "white">Delete</font></th>
 							</thead>
 							<tbody>   
+							
+							<!-- your book that you have -->
 								 @if ($booklist==NULL)
                 					
                     				<h3><center><font color = "white">----->>> You have no book <<<-----</font></center></center></h3></br>
                 					
                 				@else 
                 					@for ($i=0; $i <count($booklist) ; $i++)
-									
+							
+							
 									<tr>
 										<td> <class="col-md-8"> <font color = "#FF6347">{{$booklist[$i]->getName()}} </font></td>
 										<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit{{$i}}" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
@@ -49,7 +52,7 @@
 									</tr>
 
 
-
+<!-- Edit modal -->
 										<form class="form"  action="{{url('/edit').'/'.($booklist[$i]->getId())}}" method="get">
 	<div class="modal fade" id="edit{{$i}}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 		<div class="modal-dialog">
@@ -94,7 +97,7 @@
     </div>
 	</form>
 
-    <!-- delete -->
+    <!-- delete modal-->
 	<form class="form"  action="{{url('/delete').'/'.($booklist[$i]->getId())}}" method="get">
     <div class="modal fade" id="delete{{$i}}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 		<div class="modal-dialog">
@@ -121,7 +124,7 @@
 						</table>
 					<div class="clearfix"></div>
 
-
+<!-- back to homepage button -->
 <div class=" container container-right" style="margin-top:40px">
 	<div class="row">
       <div class="col-md-12 col-md-offset-9 col-xs-12 col-xs-offset-5">
