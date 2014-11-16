@@ -96,7 +96,7 @@
              return NULL;
             }
 
-            return $data->id;
+            return $data[0]->id;
 
         } 
 
