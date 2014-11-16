@@ -45,7 +45,8 @@ class Comment {
     {
         $this->rate = $rate;
     }
-
+	
+	//record data into database
      public function newComment(){
     	$new=new commentEloquent;
     	$new->Comment=$this->Comment;
@@ -55,7 +56,7 @@ class Comment {
     	$new->save();
     }
     
-
+	//to get comment of the book following by ID
     public function getbookcomment($id)
     {
         $temp = commentEloquent::where('bookID', '=', $id)->get();
@@ -77,7 +78,8 @@ class Comment {
         //var_dump($comment);
         return $comment;
     }
-    
+		 
+		//to calculate average point of book following by ID
         public function getbookrate($id)
     {
         $comment = commentEloquent::where('bookID', '=', $id)->get();
@@ -88,6 +90,7 @@ class Comment {
         $ans=$allrate/count($comment);
         return $ans;
     }
+    
     public function getusername(){
             $user=new User;
             return $user->getnamebyId($this->userID);

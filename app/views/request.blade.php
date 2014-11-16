@@ -17,7 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body background = "../../../set.jpg">
 
   
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -26,49 +26,45 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<center><h3><font color = "#1E90FF">Book Request</font></h3></center>
+				<center><h2><font color = "#FFFF00">Book Request</font></h2></center></br>
 					<div class="table-responsive">
 						<table id="mytable" class="table table-bordred table-striped">
 							<thead>
-								<th>Your request</th>
-								<th>Accept</th>
-								<th>Discard</th>
+								<th><font color = "white">Request</font></th>
+								<th><font color = "white">Accept</font></th>
+								<th><font color = "white">Discard</font></th>
 							</thead>
-
 							<tbody>  
 								
 								@if ($request==NULL)
-     								<tr class="primary">
-     								<td><h1><center><font color = "RED">No request!!!</font></center></center></h1></td>
-     								</tr>
+     								<h3><center><font color = "white">----->>> You have no request <<<-----</font></center></center></h3></br>
 								@else 
 								@for ($i=0; $i <count($request) ; $i++)
 
 								<tr>
-									<td class="col-md-8"><h4><font color = "#1E90FF">{{$request[$i]->getbookname()}}</font> &nbsp  &nbsp  from member  &nbsp  &nbsp <font color = "#FF1493">{{$request[$i]->getwritername()}}</font></h4></td> 
-									
-										<td><a href = "{{url('/accept').'/'.$request[$i]->getuserId().'/'.$request[$i]->getbookId()}}" <p> &nbsp &nbsp <button class="btn btn-success btn-xs" ><span class="glyphicon glyphicon-ok"></span></button></p></a></td>
-									
-									
-										<td><a href = "{{url('/canclereq').'/'.$request[$i]->getuserId().'/'.$request[$i]->getbookId()}}" <p> &nbsp &nbsp <button class="btn btn-danger btn-xs" ><span class="glyphicon glyphicon-remove"></span></button></p></a></td>
-									
-
-
-									
+									<td class="col-md-8"><h4><font color = "#DDA0DD">{{$request[$i]->getbookname()}}</font> <font color = "#FF6347"> &nbsp  &nbsp  from member  &nbsp  &nbsp </font> <font color = "#FF1493">{{$request[$i]->getwritername()}}</font></h4></td> 			
+										<td><a href = "{{url('/accept').'/'.$request[$i]->getuserId().'/'.$request[$i]->getbookId()}}" <p> &nbsp &nbsp <button class="btn btn-success btn-xs" ><span class="glyphicon glyphicon-ok"></span></button></p></a></td>	
+										<td><a href = "{{url('/canclereq').'/'.$request[$i]->getuserId().'/'.$request[$i]->getbookId()}}" <p> &nbsp &nbsp <button class="btn btn-danger btn-xs" ><span class="glyphicon glyphicon-remove"></span></button></p></a></td>							
 								@endfor
 								@endif
 								 
 							</tbody>
 						</table>
 					<div class="clearfix"></div>
+					
+					<div class=" container container-right" style="margin-top:40px">
+	<div class="row">
+      <div class="col-md-12 col-md-offset-9 col-xs-12 col-xs-offset-5">
+			 <a href="../../../home"><button type="button" class="btn btn-success btn-lg"  ><span class="glyphicon glyphicon-arrow-right"></span> Back to Home &nbsp </button></a>
+      </div>
+	</div>
+</div>
 				</div>
 			</div>
 		</div>
 	</div> 
 
 
-    
-	
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

@@ -40,16 +40,9 @@ class BookController extends BaseController{
 		$book->setbookType(10);
 		$book->editBook();
 		echo "book has deletedd"; 
-		return Redirect::to('/home');
+		return Redirect::to('/manage');
 
-	} //unfinish
-
-	public function test(){
-		//$book=Book::getById(5);
-		$book=new Updatelist;
-		var_dump($book->getupdatelist());
-		return '----- pop';
-	}
+	} 
 
 }
 

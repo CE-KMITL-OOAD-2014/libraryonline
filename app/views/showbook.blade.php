@@ -8,23 +8,23 @@
 			<div class="media-body">
 				<center><h2>{{$book->getName()}}</h2></center>
 				<div class="row">
-			<div class="col-xs-6  col-md-6">    
-                <font  color = "#00FF007"><b><h3 class="rating-num">{{$book->getavgbookrate()}}</h3></b></font>
+					<div class="col-md-12">    
+						<p class="text"> <h4><font  color = "#A52A2A">By ID {{$book->getwritername()}}</font></h4></p>
+                <font  color = "#A52A2A"><b><h4 class="rating-num">{{$book->getavgbookrate()}}</h4></b></font>
                 <div class="rating"> 
-
                 	@for ($j=0; $j <$book->getavgbookrate() ; $j++)
-                    <span class="glyphicon glyphicon-star"></span>
+                   <font  color = "#A52A2A"> <span class="glyphicon glyphicon-star"></span></font>
                     @endfor
 
                 </div>	
+				
 			</div>
-			<div class="col-xs-6  col-md-6">
-					<p class="text-right"> <h3><font  color = "#00FF007">By ID {{$book->getwritername()}}</font></h3></p>
-					
-					</div>
+			
 			</div>
 			<div class="row">
-					 {{$book->getbookContext()}}
+			<div class="col-md-12">    
+			
+					<pre> {{$book->getbookContext()}} </pre>
 			</div>
 		</div>
 		</div>	

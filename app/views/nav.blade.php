@@ -17,7 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body background = "../../../bgnav.png">
   
   
   
@@ -38,25 +38,22 @@
                     <div class="item active">
                         <img src="../../../tree.jpg" alt="First slide">
                         <div class="carousel-caption">
-                            <h3>
-                                </h3>
-                            <p>หนังสือน่าอ่าน</p>
+                            <h4>"A book is a dream that you hold in your hand."</h4>
+                            <p> – Neil Gaiman</p>
                         </div>
                     </div>
                     <div class="item">
                         <img src="../../../tree2.jpg" alt="Second slide">
                         <div class="carousel-caption">
-                            <h3>
-                                Second slide</h3>
-                            <p>หนังสือมาใหม่</p>
+                            <h4>"Reading a book is like re-writing it for yourself."</h3>
+                            <p> – Angela Carter</p>
                         </div>
                     </div>
                     <div class="item">
                         <img src="../../../tree3.jpg" alt="Third slide">
                         <div class="carousel-caption">
-                            <h3>
-                                Third slide</h3>
-                            <p>...</p>
+                            <h4>"There’s nothing wrong with reading a book you love over and over."</h4>
+                            <p> – Gail Carson Levine</p>
                         </div>
                     </div>
                 </div>
@@ -114,7 +111,7 @@
                 <li class="divider"></li>
                 <li><a href="../../../manage">Manage Book <span class="glyphicon glyphicon-pencil pull-right"></span></a></li>
                 <li class="divider"></li>
-                <li><a href="../../../request">Book Request &nbsp <span class="badge pull-right"> </span></a></li>
+                <li><a href="../../../request">Book Request  <span class="glyphicon glyphicon-refresh  pull-right"> </span></a></li>
                 <li class="divider"></li>
                 <li><a href="../../../signout">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
             </ul>
@@ -257,8 +254,8 @@
   
   
   
-    
-        
+		</br>
+        <p><center><font color = "white">© Copyright 2014 ~ Bootstrap</font></center></br></p>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

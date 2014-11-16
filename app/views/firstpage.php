@@ -19,7 +19,7 @@
   </head>
   <body>
 	
-	<marquee><h3>Online <small>Library</small></h3></marquee>
+	<marquee><h2>On-line Library is available now <small> Do you want to read some books?</small></h2></marquee>
 		<img src="booktop.jpg" class="img-responsive" alt="Responsive image">
 	
 	<div class="jumbotron" style = "background-color: #FFF">
@@ -28,7 +28,8 @@
 				<div class = "col-md-6">
 					<p><font color = "DodgerBlue"><h2>Welcome to on-line Library</h2></font></p>
 					<p> &nbsp &nbsp &nbsp  This is free website for everyone. You can read any book on condition that the writer allow you.
-						For private books, you can access the books by purchase and the process is simple. Also you can be a writer, just upload your own book.</p>
+						For private books, you can access the books by purchase and the process is simple. Also you can be a writer, just create your own book. Let release your imagination here!!!</p>
+						<p><a class="btn btn-primary btn-lg " href="../../../home" role="button">Home Page &nbsp <span class="glyphicon glyphicon-arrow-right"></span></a></p>
 				</div>
 				<div class = "col-md-6">
 					<div class="container" style="margin-top:40px">			
@@ -78,7 +79,7 @@
 		</div>
 	</div>
 
-
+	<center>© Copyright 2014 ~ Bootstrap</center></br>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

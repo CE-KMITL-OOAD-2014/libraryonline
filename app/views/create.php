@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Library</title>
     <!-- Bootstrap -->
-    <link href="bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="bootflat/bootflat/css/bootflat.min.css" rel="stylesheet">
+    <link href="../../../bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../../bootflat/bootflat/css/bootflat.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -15,7 +15,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body background = "../../../set.jpg">
 
   
   <div class="container" style="margin-top:40px">
@@ -28,9 +28,9 @@
     
             <!-- book name -->
             <div class="form-group">
-              <label class="col-md-1 control-label" for="name" required><font color = "#1E90FF">Name</font></label>
+              <label class="col-md-1 control-label" for="name" ><font color = "#1E90FF">Name</font></label>
               <div class="col-md-11">
-                <input id="name" name="bookName" type="text" placeholder="name of a book" class="form-control">
+                <input id="name" name="bookName" type="text" placeholder="name of a book" class="form-control" required>
               </div>
             </div>
 
@@ -55,17 +55,17 @@
 		
             <!-- book detail -->
             <div class="form-group">
-              <label class="col-md-1 control-label" for="message" required><font color = "#1E90FF">Detail</font></label>
+              <label class="col-md-1 control-label" for="message" ><font color = "#1E90FF">Detail</font></label>
               <div class="col-md-11">
-                <textarea class="form-control" id="message" name="bookDetail" placeholder="short story of the book" rows="3"></textarea>
+                <textarea class="form-control" id="message" name="bookDetail" placeholder="short story of the book" rows="3" required></textarea>
               </div>
             </div>
     
             <!-- book context -->
             <div class="form-group">
-              <label class="col-md-1 control-label" for="message" required><font color = "#1E90FF">Context</font></label>
+              <label class="col-md-1 control-label" for="message" ><font color = "#1E90FF">Context</font></label>
               <div class="col-md-11">
-                <textarea class="form-control" id="message" name="bookContext" placeholder="enter book story here..." rows="15"></textarea>
+                <textarea class="form-control" id="message" name="bookContext" placeholder="enter book story here..." rows="15" required></textarea>
               </div>
             </div>
 			
@@ -110,25 +110,12 @@
 </div>
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
     
     <!-- JavaScrip Search Plugin -->
     <script src="//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <script src="../../../bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
   </body>
 </html>

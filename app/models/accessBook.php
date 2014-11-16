@@ -22,16 +22,17 @@
           $this->userid = $userid;
       }
 
+	  // save key into database
       public function addnewkey()
       {
           $new=new accessbookEloquent;
           $new->bookid=$this->bookid;
           $new->userid=$this->userid;
           $new->save();
+		  return $new;
       } 
  
-
-
+		// return the value of isPublic
 		  public function getisPublic($id)
     	{
       		$book=Book::getById($id);
@@ -39,7 +40,8 @@
           //var_dump($book->getisPublic());
           return $book->getisPublic();
    		}	
-
+		
+		//get data from accessBook database that there are the same bookid for comparing with the userid. If the values match, function returns true, otherwise false.
     	public function checkkey($tbookid,$tuserid)
     	{
         	$key=accessbookEloquent::where('bookid','=',$tbookid)->get();
@@ -55,7 +57,8 @@
 
           
     	}
-
+	
+	//If the book is public, the function returns true. Otherwise,  the function goes to checkkey, if checkkey return false, the function returns false, if not the function return true.
       public function checkaccess($tbookid,$tuserid)
       {
           $book=Book::getById($tbookid);
@@ -68,7 +71,7 @@
           }
           return 1;
       }
-
+ 
 
         public function getwritername(){
             $user=new User;

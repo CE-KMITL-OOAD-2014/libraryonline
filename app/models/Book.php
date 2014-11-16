@@ -114,6 +114,7 @@
         $this->avgbookRate = $avgbookRate;
     }
 
+	// save the book into the database and create key of the book (access book) for writer by automatically.
     public function newBook(){
     	$new=new bookEloquent;
     	$new->bookName=$this->bookName;
@@ -143,8 +144,6 @@
     		return NULL;
     	}
 
-        //echo "foundd";
-        //var_dump($data);
     	$obj->id=$data->id;
     	$obj->bookName=$data->bookName;
     	$obj->writerID=$data->writerID;
@@ -153,12 +152,12 @@
         $obj->bookPrice=$data->bookPrice;
         $obj->bookType=$data->bookType;
         $obj->avgbookRate=$data->avgbookRate;
-        //echo "foundp";
 
     	return $obj;
 
     }
 
+	//to show the book for reading
      public static function getconById($id){
         $obj=new Book;
         $data=bookEloquent::find($id);
@@ -167,19 +166,11 @@
             return NULL;
         }
 
-        //echo "foundd";
-        //var_dump($data);
         $obj->id=$data->id;
         $obj->bookName=$data->bookName;
         $obj->writerID=$data->writerID;
-        //$obj->isPublic=$data->isPublic;
-        //$obj->bookDetail=$data->bookDetail;
         $obj->bookContext=$data->bookContext;
-        //$obj->bookPrice=$data->bookPrice;
-        //$obj->bookType=$data->bookType;
-        $obj->avgbookRate=$data->avgbookRate;
-        //echo "foundp";
-
+        $obj->avgbookRate=$data->avgbookRate;  
         return $obj;
 
     }
@@ -196,6 +187,7 @@
 
     }
 
+
     public function editBook(){
         $edit=new Book;
     	$edit=bookEloquent::find($this->id);
@@ -209,6 +201,7 @@
     	$edit->save();
     }
 
+	//this function will be called when having new rate.
     public function editavgrate(){
         $edit=new Book;
         $edit=bookEloquent::find($this->id);
@@ -217,7 +210,7 @@
         $edit->save();
     }
 
-
+	//get every book from the database
      public static function getallBook(){
             $data=bookEloquent::all();
             $size=count($data);
@@ -235,7 +228,7 @@
                 $book[$i]=$obj;
             }
             
-            return $book; 
+            return $book;  
         }
 
         public function getwritername(){

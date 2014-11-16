@@ -1,10 +1,19 @@
 <?php  
 class UserController extends BaseController{
+
+	public function __construct()
+{
+    $this->beforeFilter('force.ssl');
+}
+	
 	public function getsignup(){
-		return View::make("signup");
+		if (Auth::check()) {
+			return Redirect::to('../../../home');
+		}
+		 return View::make("signup");  
 	}
 
-	public function postsignup(){
+	public function postsignup(){ 
 		$user=new User;
 		$user->setName(Input::get('userName'));
 		$user->setPassword(Hash::make(Input::get('password')));
@@ -37,6 +46,9 @@ class UserController extends BaseController{
 	}
 
 	public function firstpage(){
+		if (Auth::check()) {
+			return Redirect::to('../../../home');
+		}
 		return View::make("firstpage");
 	}
 

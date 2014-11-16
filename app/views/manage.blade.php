@@ -7,8 +7,8 @@
     <title>Library</title>
 
     <!-- Bootstrap -->
-    <link href="bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="bootflat/bootflat/css/bootflat.min.css" rel="stylesheet">
+    <link href="../../../bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../../bootflat/bootflat/css/bootflat.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,7 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body background = "../../../set.jpg">
 
   
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -26,24 +26,24 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<center><h3><font color = "#1E90FF">Book Management</font></h3></center>
+				<center><h2><font color = "#FFFF00">Book Management</font></h2></center></br>
 					<div class="table-responsive">
 						<table id="mytable" class="table table-bordred table-striped">
 							<thead>
-								<th>Book</th>
-								<th>Edit</th>
-								<th>Delete</th>
+								<th><font color = "white">Book</font></th>
+								<th><font color = "white">Edit</font></th>
+								<th><font color = "white">Delete</font></th>
 							</thead>
-							<tbody>  
+							<tbody>   
 								 @if ($booklist==NULL)
-                					<tr class="primary">
-                    				<td><h4><center><font color = "BLUE">You have no book</font></center></center></h4></td>
-                					</tr>
+                					
+                    				<h3><center><font color = "white">----->>> You have no book <<<-----</font></center></center></h3></br>
+                					
                 				@else 
                 					@for ($i=0; $i <count($booklist) ; $i++)
 									
 									<tr>
-										<td> <class="col-md-8"> {{$booklist[$i]->getName()}} </td>
+										<td> <class="col-md-8"> <font color = "#FF6347">{{$booklist[$i]->getName()}} </font></td>
 										<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit{{$i}}" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
 										<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete{{$i}}" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
 									</tr>
@@ -114,15 +114,9 @@
 		</div> 
     </div>
 	</form>
-
 									@endfor
 								@endif
-								
-								
-
-
-
-								
+					
 							</tbody>
 						</table>
 					<div class="clearfix"></div>
@@ -135,8 +129,6 @@
       </div>
 	</div>
 </div>
-
-
 				</div>
 			</div>
 		</div>
@@ -146,6 +138,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <script src="../../../bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
   </body>
 </html>

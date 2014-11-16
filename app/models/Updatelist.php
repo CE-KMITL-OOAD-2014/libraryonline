@@ -1,7 +1,8 @@
 <?php
 
 class Updatelist{
-
+	
+	//pop the last 10 books from the book database
    public function getupdatelist()
     {
       $temp=bookEloquent::all();
@@ -11,7 +12,7 @@ class Updatelist{
       }else{
         $num=10;
       }
-      $list=array();
+      $list=array(); 
 
       for($j=0;$j<$num;$j++){
         $i=$size-($j+1);
@@ -31,6 +32,7 @@ class Updatelist{
         return $list;
     }
 
+	//pop 10 books that have rate 5, if there are not fully in 10 books, the function will pop the books that have rate 4
     public function gettoplist()
     {
       $temp=bookEloquent::where('avgbookRate','=', 5 )->get();
@@ -57,7 +59,6 @@ class Updatelist{
           $obj->setavgbookRate($temp[$i]->avgbookRate);
           $list[$i]=$obj;
         }
-        var_dump($chk); 
         if ($chk==0) {
           $temp2=bookEloquent::where('avgbookRate','=', 4 )->get();
           $size2=count($temp2);
@@ -66,7 +67,6 @@ class Updatelist{
           }else{
             $num=10;
           }
-          var_dump($num);
           for($j=$size;$j<$num;$j++){
             $i=$j-$size;
              $obj=new Book;

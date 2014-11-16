@@ -56,8 +56,9 @@ class buyController extends BaseController{
 
    	   	public function canclereq($userid,$bookid)
    	{
-   		echo "cccccc";
-   		return Redirect::to('request'); 
+      $new=new buyBook;
+   		$new->deletereg($userid,$bookid);
+   		return Redirect::to('/request'); 
    	}
 }
 ?>

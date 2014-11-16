@@ -14,7 +14,7 @@
           return NULL; }
 
         $book=array( );
-
+ 
         for($i=0;$i<$size;$i++){
           $obj=new Book;
           $obj->setId($temp[$i]->id);
@@ -52,7 +52,7 @@
           $obj->setbookPrice($temp[$i]->bookPrice);
           $obj->setbookType($temp[$i]->bookType);
           $obj->setavgbookRate($temp[$i]->avgbookRate);
-          $book[$i]=$obj;
+          $book[$i]=$obj; 
         }
           //var_dump($book);
           return $book;

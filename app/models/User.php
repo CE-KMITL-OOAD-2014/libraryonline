@@ -55,6 +55,7 @@
         $this->finance = $finance;
     }
 
+	//record data of user into database
     public function newUser(){
     	$new=new userEloquent;
     	$new->userName=$this->userName;
@@ -90,13 +91,14 @@
 
          public static function getIdbyname($name){
         $data=userEloquent::where('userName','=',$name)->get();
-            if($data==NULL){
-             return 0;
+
+            if(count($data)==0){
+             return NULL;
             }
 
-            return $data[0]->id;
+            return $data->id;
 
-        }
+        } 
 
     public function editUser(){
     	$edit=userEloquent::find($this->id);

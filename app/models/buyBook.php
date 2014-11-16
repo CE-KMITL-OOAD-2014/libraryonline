@@ -23,13 +23,17 @@
           $this->userid = $userid;
       }
 
+	  //record data into database
       public function newreqkey()
       {
           $new=new buybookEloquent;
           $new->bookid=$this->bookid;
           $new->userid=$this->userid;
           $new->save();
-      } 
+		  return $new;
+      }
+	  
+	  //to delete request of private book
       public function deletereg($tuserid,$tbookid)
       {
         $regg=buybookEloquent::where('userid','=',$tuserid);
@@ -38,6 +42,7 @@
           //return $this->bookid;
       } 
 
+	  //check request of a private book that it is still in database or not.
       public function checkreq($tuserid,$tbookid){
         $reqq=buybookEloquent::where('userid','=',$tuserid)->get();
           for($i=0;$i<count($reqq);$i++){
@@ -62,7 +67,7 @@
         }
 
         return $tempreq;
-      }
+      } 
 
         public function getwritername(){
             $user=new User;

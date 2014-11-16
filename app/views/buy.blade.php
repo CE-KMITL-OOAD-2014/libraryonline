@@ -17,7 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body background = "../../../set.jpg">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="http://templateplanet.info/tooltip.js"></script>
 	<script src="http://templateplanet.info/modal.js"></script>
@@ -26,8 +26,8 @@
 	<div class="row">
       <div class="col-md-12">
 		
-				<legend class="text-center"><h3><font color = "RED">You are not allow to read this book!!!</font></h3></legend>
-					<div class="alert alert-default"><span class="glyphicon glyphicon-info-sign"></span> You have to buy the book first. Do you want to buy this book?</div>
+				<legend class="text-center"><h3><font color = "#FFFF00" size = "6">You are not allow to read this book!!!</font></h3></legend>
+					<div class="alert alert-default"><font color= "white" size = "3"> <span class="glyphicon glyphicon-info-sign"></span> You have to buy the book first. Do you want to buy this book?</font></div>
 			<div class="col-md-3" "col-md-offset-2">
 				<p><button class="btn btn-success btn-lg"  style="width: 50%;" data-title="Buy" data-toggle="modal" data-target="#buy" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-shopping-cart"></span> Buy</button></p>
 			</div>
