@@ -191,7 +191,7 @@ public static function getnamebyId($id){
 public function editBook(){
     $edit=new Book;
     $edit=bookEloquent::find($this->id);
-    	//$edit->bookName=$this->bookName;
+    $edit->isPublic=$this->isPublic;
     $edit->writerID=$this->writerID;
     $edit->bookDetail=$this->bookDetail;
     $edit->bookContext=$this->bookContext;
